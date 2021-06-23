@@ -10,10 +10,7 @@ namespace ConsoleSignalRServer
     {
         static void Main(string[] args)
         {
-            var host = CreateHostBuilder(args).Build();
-            IHubContext<MessageHub> hubContext = (IHubContext<MessageHub>)host.Services.GetService(typeof(IHubContext<MessageHub>));
-            var watcher = new DirectoryWatcher(hubContext);
-            host.Run();
+            CreateHostBuilder(args).Build().Run();
         }
 
         private static IHostBuilder CreateHostBuilder(string[] args) =>
