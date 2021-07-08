@@ -1,0 +1,17 @@
+<app-user (resgister)="testRegister($event)" (messageEntered)="messageEntered($event)"></app-user>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col" class="col-2">User</th>
+            <th scope="col" class="col-4">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usr of userMessages; index as i">
+            <td>
+                {{ usr.name }}
+            </td>
+            <td>{{ usr.message }}</td>
+        </tr>
+    </tbody>
+</table>

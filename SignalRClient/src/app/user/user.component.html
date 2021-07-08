@@ -1,0 +1,28 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col" class="col-2">User</th>
+            <th scope="col" class="col-4">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div class="col-1">
+                    <input *ngIf='!show' type="text" [(ngModel)]='userName'>
+                    <label *ngIf='show'>{{userName}}</label>
+                </div>
+                <div class="col-1" *ngIf='!show'><button type="button" class="btn btn-primary"
+                        (click)='registerUser($event)'>Register</button></div>
+            </td>
+            <td>
+                <!-- <input type="text" *ngIf='user' name="Message"> -->
+                <div class="col-1" *ngIf='show'>
+                    <input type="text" [(ngModel)]='message'>
+                    <button type="button" class="btn btn-primary" (click)='submitMessage($event)'>Send</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr>
