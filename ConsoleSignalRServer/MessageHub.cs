@@ -7,8 +7,13 @@ namespace ConsoleSignalRServer
     {
         public async override Task OnConnectedAsync()
         {
-            await Clients.Caller.SendAsync("ReceiveMessage", "connected");
+            await Clients.Caller.SendAsync("Connected", "connected");
             await base.OnConnectedAsync();
+        }
+
+        public async Task SendMessage(MessageModel message)
+        {
+            await Clients.Others.SendAsync("ReceiveMessage", message);
         }
     }
 }
